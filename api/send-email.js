@@ -1,6 +1,6 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Método no permitido' });
   }
@@ -53,4 +53,4 @@ module.exports = async function handler(req, res) {
     console.error('Error enviando email:', error);
     return res.status(500).json({ error: 'Error al enviar el email' });
   }
-};
+}
