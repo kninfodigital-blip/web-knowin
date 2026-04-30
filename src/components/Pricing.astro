@@ -1,0 +1,40 @@
+---
+const plans = [
+  { n: '01', name: 'Arranque', price: '1.500', target: 'Empresas que empiezan online',
+    includes: ['Web 5-7 secciones', 'SEO base + analytics', 'Responsive 100%', 'Hosting incluido', 'Soporte por email'],
+    bg: '#fff', fg: '#0a0a0a' },
+  { n: '02', name: 'Sistema', featured: true, price: '3.500', target: 'Empresas que quieren escalar',
+    includes: ['Web completa + blog', 'Automatizaciones CRM', 'Formularios inteligentes', 'Integración WhatsApp', 'Soporte prioritario', 'Optimización mensual'],
+    bg: '#caff00', fg: '#0a0a0a' },
+  { n: '03', name: 'A medida', price: '6.000+', target: 'Proyectos complejos',
+    includes: ['Plataforma personalizada', 'Integraciones a medida', 'Dashboard de datos', 'Automatización completa', 'Equipo dedicado', 'SLA garantizado'],
+    bg: '#0a0a0a', fg: '#fff' },
+];
+---
+
+<section class="v2-section" id="prc">
+  <div class="v2-section-head">
+    <div class="v2-eyebrow" style="color:#2b6cff">— Capítulo 03</div>
+    <h2 class="v2-section-title">
+      Precios.<br/>
+      Públicos.<br/>
+      <em>Cerrados.</em>
+    </h2>
+  </div>
+  <div class="v2-plans">
+    {plans.map(p => (
+      <div class={`v2-plan ${p.featured ? 'v2-plan-on' : ''}`} style={`background:${p.bg};color:${p.fg}`}>
+        {p.featured && <div class="v2-plan-tag">★ Más elegido</div>}
+        <div class="v2-plan-num">{p.n}</div>
+        <h3 class="v2-plan-name">{p.name}</h3>
+        <div class="v2-plan-target">{p.target}</div>
+        <div class="v2-plan-price">€{p.price}</div>
+        <div class="v2-plan-extra">precio cerrado</div>
+        <ul>{p.includes.map(item => <li>— {item}</li>)}</ul>
+        <a href="#cnt" class="v2-plan-cta" style={`background:${p.fg};color:${p.bg};border-color:${p.fg}`}>
+          Elegir {p.name} →
+        </a>
+      </div>
+    ))}
+  </div>
+</section>

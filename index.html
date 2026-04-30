@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowin — Webs y automatización con IA para empresas | Andorra</title>
+  <meta name="description" content="Construimos webs y agentes de IA para empresas que quieren crecer. Precio cerrado, 14 días a producción, cero humo.">
+  <link rel="canonical" href="https://knowin.es/">
+  <meta property="og:title" content="Knowin — Webs y automatización con IA para empresas | Andorra">
+  <meta property="og:description" content="Construimos webs y agentes de IA para empresas que quieren crecer. Precio cerrado, 14 días a producción, cero humo.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='23' font-family='sans-serif' font-weight='900' font-size='20' fill='%23caff00' text-anchor='middle'>K</text></svg>">
+
+  <!-- Fuentes desde Google Fonts (reemplazar por self-hosted en producción) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Knowin","url":"https://knowin.es","email":"kninfodigital@gmail.com","telephone":"+376655708","address":{"@type":"PostalAddress","addressLocality":"Escaldes-Engordany","addressCountry":"AD"},"areaServed":["AD","ES","FR"]}
+  </script>
+
+  <style>
+    /* ══════════════════════════════════════════
+       KNOWIN — EDITORIAL BRUTALISTA
+       ══════════════════════════════════════════ */
+
+    /* ── THEME ── */
+    :root {
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --bg: #f4f1ea;
+      --fg: #0a0a0a;
+      --volt: #caff00;
+      --blue: #2b6cff;
+      --pink: #ff2bd6;
+      --muted: #666;
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--fg); overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    *:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+    /* ── NAV ── */
+    .v2-nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; border-bottom: 2px solid var(--fg); background: var(--bg); position: sticky; top: 0; z-index: 50; }
+    .v2-nav-logo { font-family: var(--font-display); font-size: 26px; font-weight: 800; letter-spacing: -0.04em; }
+    .v2-nav-dot { color: var(--volt); }
+    .v2-nav-links { display: flex; gap: 28px; }
+    .v2-nav-links a { font-size: 14px; font-weight: 500; display: flex; gap: 6px; align-items: baseline; }
+    .v2-nav-links a span { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+    .v2-nav-links a:hover { color: var(--blue); }
+    .v2-nav-cta { background: var(--fg); color: #fff; padding: 10px 18px; font-weight: 700; font-size: 14px; border: 2px solid var(--fg); transition: all 0.15s; }
+    .v2-nav-cta:hover { background: var(--volt); color: var(--fg); }
+
+    /* ── HERO ── */
+    .v2-hero { display: grid; grid-template-columns: 200px 1fr; border-bottom: 2px solid var(--fg); position: relative; min-height: 100vh; }
+    .v2-hero-side { border-right: 2px solid var(--fg); padding: 40px 24px; display: flex; flex-direction: column; justify-content: space-between; background: var(--fg); color: var(--bg); }
+    .v2-hero-issue { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; display: flex; flex-direction: column; gap: 6px; }
+    .v2-hero-tagline { font-family: var(--font-display); font-size: 14px; font-weight: 700; line-height: 1.2; text-transform: uppercase; color: var(--volt); }
+    .v2-hero-main { padding: 60px 56px 40px; position: relative; }
+    .v2-eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; display: flex; align-items: center; gap: 12px; margin-bottom: 24px; text-transform: uppercase; color: var(--muted); }
+    .v2-dash { width: 32px; height: 2px; background: var(--fg); display: inline-block; }
+    .v2-hero-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(60px, 12vw, 180px); line-height: 0.88; letter-spacing: -0.06em; text-transform: uppercase; margin-bottom: 48px; }
+    .v2-h-line { display: block; }
+    .v2-h-blue { color: var(--blue); }
+    .v2-h-volt { color: var(--fg); background: var(--volt); display: inline-block; padding: 0 20px; margin-left: -12px; }
+    .v2-h-strike-text { position: relative; font-style: italic; display: inline-block; }
+    .v2-h-strike-text::after { content: ''; position: absolute; left: -2%; right: -2%; top: 48%; height: 12px; background: var(--pink); transform: skewY(-3deg); }
+    .v2-h-arrow { font-size: 0.7em; font-style: italic; font-weight: 600; }
+    .v2-arrow-anim { display: inline-block; animation: v2-arrow 1.4s infinite; margin-left: 12px; }
+    @keyframes v2-arrow { 0%,100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
+
+    .v2-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border-top: 2px solid var(--fg); padding-top: 28px; margin-bottom: 48px; }
+    .v2-hero-lede { font-size: clamp(15px, 1.4vw, 18px); line-height: 1.5; max-width: 480px; }
+    .v2-hero-lede em { color: var(--blue); font-style: italic; }
+    .v2-hero-actions { display: flex; flex-direction: column; gap: 12px; align-self: start; }
+    .v2-cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 24px; font-weight: 700; font-size: 16px; transition: all 0.15s; border: 2px solid var(--fg); }
+    .v2-cta-black { background: var(--fg); color: var(--bg); }
+    .v2-cta-black:hover { background: var(--volt); color: var(--fg); }
+    .v2-cta-ghost { background: transparent; color: var(--fg); }
+    .v2-cta-ghost:hover { background: var(--fg); color: var(--bg); }
+
+    .v2-hero-numbers { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--fg); padding-top: 24px; }
+    .v2-num { padding-right: 24px; border-right: 1px solid var(--fg); }
+    .v2-num:last-child { border-right: none; }
+    .v2-num-big { font-family: var(--font-display); font-size: clamp(48px, 6vw, 80px); font-weight: 900; line-height: 0.9; letter-spacing: -0.04em; }
+    .v2-num-big span { color: var(--blue); font-size: 0.6em; }
+    .v2-num-cap { font-size: 13px; line-height: 1.4; margin-top: 12px; max-width: 220px; color: var(--muted); }
+
+    .v2-hero-rotor { position: absolute; bottom: 60px; right: 60px; width: 140px; height: 140px; pointer-events: none; }
+    .v2-rotor-text { font-family: var(--font-mono); font-size: 14px; font-weight: 700; letter-spacing: 0.08em; fill: var(--fg); }
+
+    /* ── STRIP ── */
+    .v2-strip { background: var(--fg); color: var(--volt); overflow: hidden; border-bottom: 2px solid var(--fg); padding: 18px 0; }
+    .v2-strip-inner { display: flex; gap: 40px; white-space: nowrap; font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -0.01em; text-transform: uppercase; animation: v2-scroll 30s linear infinite; }
+    .v2-strip-sep { color: var(--pink); }
+    @keyframes v2-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── SECTIONS ── */
+    .v2-section { padding: 120px 56px; border-bottom: 2px solid var(--fg); }
+    .v2-section-head { margin-bottom: 80px; }
+    .v2-section-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(48px, 8vw, 130px); line-height: 0.88; letter-spacing: -0.05em; }
+    .v2-section-title em { font-style: italic; color: var(--blue); font-weight: 800; }
+
+    /* ── SERVICES ── */
+    .v2-srv-stack { border-top: 2px solid var(--fg); }
+    .v2-srv-row { display: grid; grid-template-columns: 100px 1fr auto; gap: 32px; align-items: center; padding: 40px 0; border-bottom: 2px solid var(--fg); position: relative; cursor: pointer; overflow: hidden; transition: color 0.3s; }
+    .v2-srv-fill { position: absolute; inset: 0; background: var(--srv-bg); transform: translateX(-101%); transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1); z-index: 0; }
+    .v2-srv-row:hover .v2-srv-fill { transform: translateX(0); }
+    .v2-srv-row:hover { color: var(--srv-fg); }
+    .v2-srv-num, .v2-srv-name, .v2-srv-arrow { position: relative; z-index: 1; }
+    .v2-srv-num { font-family: var(--font-mono); font-size: 16px; font-weight: 700; }
+    .v2-srv-name h3 { font-family: var(--font-display); font-size: clamp(28px, 4.5vw, 56px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; }
+    .v2-srv-name p { font-size: 16px; font-style: italic; opacity: 0.7; }
+    .v2-srv-arrow { font-family: var(--font-display); font-size: 56px; font-weight: 800; transition: transform 0.3s; }
+    .v2-srv-row:hover .v2-srv-arrow { transform: translateX(12px); }
+
+    /* ── CASES ── */
+    .v2-cases-list { display: flex; flex-direction: column; }
+    .v2-case { padding: 40px 0; border-top: 2px solid var(--fg); }
+    .v2-case:last-child { border-bottom: 2px solid var(--fg); }
+    .v2-case-meta { display: flex; gap: 16px; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; margin-bottom: 12px; }
+    .v2-case-cli { font-weight: 700; }
+    .v2-case-sec { color: var(--muted); }
+    .v2-case-title { font-family: var(--font-display); font-weight: 800; font-size: clamp(22px, 2.5vw, 32px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; max-width: 720px; }
+    .v2-case-bottom { display: flex; align-items: center; gap: 24px; }
+    .v2-case-m { font-family: var(--font-display); font-weight: 900; font-size: clamp(32px, 4vw, 56px); letter-spacing: -0.04em; line-height: 1; padding: 4px 12px; }
+    .v2-case-l { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; color: var(--muted); }
+    .v2-case-link { font-family: var(--font-mono); font-size: 13px; text-decoration: underline; text-underline-offset: 4px; margin-left: auto; }
+    .v2-case-link:hover { color: var(--blue); }
+
+    /* ── PRICING ── */
+    .v2-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 2px solid var(--fg); }
+    .v2-plan { padding: 36px 32px; border-right: 2px solid var(--fg); position: relative; display: flex; flex-direction: column; }
+    .v2-plan:last-child { border-right: none; }
+    .v2-plan-on { transform: scale(1.02); z-index: 2; box-shadow: 0 0 0 2px var(--fg); }
+    .v2-plan-tag { position: absolute; top: -2px; left: -2px; background: var(--fg); color: var(--volt); font-family: var(--font-mono); font-size: 11px; font-weight: 700; padding: 6px 12px; }
+    .v2-plan-num { font-family: var(--font-mono); font-size: 13px; margin-bottom: 12px; opacity: 0.7; }
+    .v2-plan-name { font-family: var(--font-display); font-size: 44px; font-weight: 900; letter-spacing: -0.04em; line-height: 0.9; margin-bottom: 8px; }
+    .v2-plan-target { font-size: 13px; font-style: italic; margin-bottom: 32px; opacity: 0.8; }
+    .v2-plan-price { font-family: var(--font-display); font-weight: 900; font-size: 56px; letter-spacing: -0.04em; line-height: 1; }
+    .v2-plan-extra { font-family: var(--font-mono); font-size: 13px; margin: 8px 0 24px; opacity: 0.7; }
+    .v2-plan ul { list-style: none; display: flex; flex-direction: column; gap: 8px; flex: 1; margin-bottom: 28px; }
+    .v2-plan ul li { font-size: 14px; }
+    .v2-plan-cta { align-self: stretch; text-align: center; padding: 14px; font-weight: 700; font-size: 14px; border: 2px solid; transition: all 0.15s; display: block; }
+    .v2-plan-cta:hover { opacity: 0.8; }
+
+    /* ── CONTACT ── */
+    .v2-contact { background: var(--pink); color: var(--fg); }
+    .v2-contact .v2-eyebrow { color: var(--fg); }
+    .v2-contact-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(48px, 8vw, 130px); line-height: 0.88; letter-spacing: -0.05em; margin-bottom: 60px; }
+    .v2-contact-title em { font-style: italic; color: var(--bg); }
+    .v2-contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; }
+    .v2-contact-info p { font-size: 17px; line-height: 1.5; margin-bottom: 32px; max-width: 420px; }
+    .v2-contact-meta { display: flex; flex-direction: column; gap: 8px; }
+    .v2-contact-meta div { font-family: var(--font-mono); font-size: 14px; }
+    .v2-contact-meta strong { display: inline-block; width: 80px; font-weight: 700; }
+    .v2-contact-form { background: var(--fg); color: var(--bg); padding: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border: 2px solid var(--fg); box-shadow: 12px 12px 0 var(--bg); }
+    .v2-contact-form label { display: flex; flex-direction: column; gap: 6px; }
+    .v2-cf-full { grid-column: 1 / -1; }
+    .v2-contact-form label span { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--pink); }
+    .v2-contact-form input, .v2-contact-form select, .v2-contact-form textarea { background: transparent; border: 1px solid #333; padding: 12px 14px; color: var(--bg); font-family: var(--font-body); font-size: 14px; outline: none; }
+    .v2-contact-form input:focus, .v2-contact-form select:focus, .v2-contact-form textarea:focus { border-color: var(--volt); }
+    .v2-cf-send { grid-column: 1 / -1; background: var(--volt); color: var(--fg); padding: 16px; font-weight: 700; font-size: 16px; border: 2px solid var(--volt); cursor: pointer; transition: all 0.15s; }
+    .v2-cf-send:hover { background: transparent; color: var(--volt); }
+
+    /* ── FOOTER ── */
+    .v2-footer { background: var(--fg); color: var(--bg); padding: 80px 56px 32px; }
+    .v2-footer-mega { font-family: var(--font-display); font-weight: 900; font-size: clamp(80px, 18vw, 280px); letter-spacing: -0.06em; line-height: 0.85; margin-bottom: 60px; }
+    .v2-footer-mega span { color: var(--volt); }
+    .v2-footer-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; border-top: 1px solid #333; padding: 40px 0; }
+    .v2-footer-cols h4 { font-family: var(--font-mono); font-size: 12px; color: var(--volt); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+    .v2-footer-cols a { display: block; font-size: 14px; color: #ccc; padding: 4px 0; }
+    .v2-footer-cols a:hover { color: var(--volt); }
+    .v2-footer-bot { display: flex; justify-content: space-between; border-top: 1px solid #333; padding-top: 24px; font-family: var(--font-mono); font-size: 12px; color: #777; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .v2-hero { grid-template-columns: 1fr; }
+      .v2-hero-side { border-right: none; border-bottom: 2px solid var(--fg); flex-direction: row; padding: 20px 24px; }
+      .v2-hero-main { padding: 40px 24px; }
+      .v2-hero-grid, .v2-contact-grid { grid-template-columns: 1fr; }
+      .v2-hero-numbers { grid-template-columns: 1fr; }
+      .v2-num { border-right: none; border-bottom: 1px solid var(--fg); padding: 0 0 16px; margin-bottom: 16px; }
+      .v2-plans { grid-template-columns: 1fr; }
+      .v2-plan { border-right: none; border-bottom: 2px solid var(--fg); }
+      .v2-nav-links { display: none; }
+      .v2-nav { padding: 16px 24px; }
+      .v2-section, .v2-footer { padding-left: 24px; padding-right: 24px; }
+      .v2-section { padding-top: 80px; padding-bottom: 80px; }
+      .v2-hero-rotor { display: none; }
+      .v2-srv-row { grid-template-columns: 60px 1fr auto; gap: 16px; padding: 24px 0; }
+      .v2-srv-arrow { font-size: 32px; }
+      .v2-contact-form { grid-template-columns: 1fr; }
+      .v2-footer-cols { grid-template-columns: repeat(2, 1fr); }
+      .v2-footer-bot { flex-direction: column; gap: 8px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════ NAV ════════════ -->
+  <header class="v2-nav">
+    <a href="/" class="v2-nav-logo">knowin<span class="v2-nav-dot">.</span></a>
+    <nav class="v2-nav-links">
+      <a href="#srv"><span>01</span> Servicios</a>
+      <a href="#case"><span>02</span> Casos</a>
+      <a href="#prc"><span>03</span> Precios</a>
+    </nav>
+    <a href="#cnt" class="v2-nav-cta">Empezar →</a>
+  </header>
+
+  <main>
+
+    <!-- ════════════ HERO ════════════ -->
+    <section class="v2-hero">
+      <div class="v2-hero-side">
+        <div class="v2-hero-issue">
+          <div>VOL.01</div>
+          <div>2026 — ANDORRA</div>
+          <div>AGENCIA·DIGITAL</div>
+        </div>
+        <div class="v2-hero-tagline">
+          UN MANIFIESTO<br>EN FORMA DE<br>AGENCIA.
+        </div>
+      </div>
+
+      <div class="v2-hero-main">
+        <div class="v2-eyebrow">
+          <span class="v2-dash"></span> SISTEMAS DIGITALES QUE ESCALAN
+        </div>
+        <h1 class="v2-hero-title">
+          <span class="v2-h-line">TU&nbsp;WEB</span>
+          <span class="v2-h-line"><span class="v2-h-strike-text">EXISTE.</span></span>
+          <span class="v2-h-line v2-h-blue">PERO&nbsp;NO</span>
+          <span class="v2-h-line"><span class="v2-h-volt">VENDE.</span></span>
+          <span class="v2-h-line v2-h-arrow">ARREGLEMOS&nbsp;ESO<span class="v2-arrow-anim">→</span></span>
+        </h1>
+
+        <div class="v2-hero-grid">
+          <p class="v2-hero-lede">
+            Knowin construye webs y automatizaciones para empresas que ya no aceptan
+            seguir invisibles. <em>Sin paquetes premium inflados. Sin "vamos a explorar".
+            Sin humo.</em> Solo sistemas que facturan.
+          </p>
+          <div class="v2-hero-actions">
+            <a href="#cnt" class="v2-cta v2-cta-black">
+              Reservar diagnóstico gratis
+              <span>↗</span>
+            </a>
+            <a href="#case" class="v2-cta v2-cta-ghost">
+              Ver casos reales
+            </a>
+          </div>
+        </div>
+
+        <div class="v2-hero-numbers">
+          <div class="v2-num">
+            <div class="v2-num-big">+15</div>
+            <div class="v2-num-cap">Proyectos entregados funcionando en producción.</div>
+          </div>
+          <div class="v2-num">
+            <div class="v2-num-big">14<span>d</span></div>
+            <div class="v2-num-cap">De brief a producción. Pregunta a nuestros clientes.</div>
+          </div>
+          <div class="v2-num">
+            <div class="v2-num-big">3<span>países</span></div>
+            <div class="v2-num-cap">Andorra, España y Francia. Remote-first.</div>
+          </div>
+        </div>
+
+        <div class="v2-hero-rotor" id="rotor">
+          <svg viewBox="0 0 200 200">
+            <defs><path id="v2cp" d="M 100,100 m -82,0 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0"/></defs>
+            <text class="v2-rotor-text"><textPath href="#v2cp">KNOWIN · WEB · SISTEMAS · KNOWIN · WEB · SISTEMAS · </textPath></text>
+            <circle cx="100" cy="100" r="32" fill="#0a0a0a"/>
+            <text x="100" y="108" text-anchor="middle" fill="#caff00" font-size="22" font-weight="900">K</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ STRIP ════════════ -->
+    <div class="v2-strip">
+      <div class="v2-strip-inner">
+        <span>WEBS QUE VENDEN</span><span class="v2-strip-sep">✱</span>
+        <span>AUTOMATIZACIÓN</span><span class="v2-strip-sep">✱</span>
+        <span>14 DÍAS A LIVE</span><span class="v2-strip-sep">✱</span>
+        <span>PRECIO CERRADO</span><span class="v2-strip-sep">✱</span>
+        <span>CERO HUMO</span><span class="v2-strip-sep">✱</span>
+        <span>WEBS QUE VENDEN</span><span class="v2-strip-sep">✱</span>
+        <span>AUTOMATIZACIÓN</span><span class="v2-strip-sep">✱</span>
+        <span>14 DÍAS A LIVE</span><span class="v2-strip-sep">✱</span>
+        <span>PRECIO CERRADO</span><span class="v2-strip-sep">✱</span>
+        <span>CERO HUMO</span><span class="v2-strip-sep">✱</span>
+      </div>
+    </div>
+
+    <!-- ════════════ SERVICIOS ════════════ -->
+    <section class="v2-section" id="srv">
+      <div class="v2-section-head">
+        <div class="v2-eyebrow">— Capítulo 01</div>
+        <h2 class="v2-section-title">Cuatro<br><em>servicios.</em><br>Ninguno<br>inflado.</h2>
+      </div>
+      <div class="v2-srv-stack">
+        <a href="#cnt" class="v2-srv-row" style="--srv-bg:#caff00;--srv-fg:#0a0a0a">
+          <div class="v2-srv-num">01</div>
+          <div class="v2-srv-name"><h3>Webs que convierten</h3><p>Rápidas, SEO, pensadas para vender.</p></div>
+          <div class="v2-srv-arrow">→</div>
+          <div class="v2-srv-fill"></div>
+        </a>
+        <a href="#cnt" class="v2-srv-row" style="--srv-bg:#2b6cff;--srv-fg:#fff">
+          <div class="v2-srv-num">02</div>
+          <div class="v2-srv-name"><h3>Landing pages</h3><p>Convierten o iteramos hasta que lo hagan.</p></div>
+          <div class="v2-srv-arrow">→</div>
+          <div class="v2-srv-fill"></div>
+        </a>
+        <a href="#cnt" class="v2-srv-row" style="--srv-bg:#ff2bd6;--srv-fg:#0a0a0a">
+          <div class="v2-srv-num">03</div>
+          <div class="v2-srv-name"><h3>Automatizaciones</h3><p>Tu equipo deja de copiar-pegar.</p></div>
+          <div class="v2-srv-arrow">→</div>
+          <div class="v2-srv-fill"></div>
+        </a>
+        <a href="#cnt" class="v2-srv-row" style="--srv-bg:#0a0a0a;--srv-fg:#caff00">
+          <div class="v2-srv-num">04</div>
+          <div class="v2-srv-name"><h3>Consultoría digital</h3><p>Qué construir, en qué orden, cómo medir.</p></div>
+          <div class="v2-srv-arrow">→</div>
+          <div class="v2-srv-fill"></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ════════════ CASOS ════════════ -->
+    <section class="v2-section" id="case">
+      <div class="v2-section-head">
+        <div class="v2-eyebrow">— Capítulo 02</div>
+        <h2 class="v2-section-title">Casos.<br>Reales.<br><em>Verificables.</em></h2>
+      </div>
+      <div class="v2-cases-list">
+        <article class="v2-case">
+          <div class="v2-case-meta"><span class="v2-case-cli">Hillel Andorra</span><span class="v2-case-sec">Educación · Andorra</span></div>
+          <h3 class="v2-case-title">Plataforma educativa con reservas en tiempo real que multiplicó inscripciones</h3>
+          <div class="v2-case-bottom">
+            <span class="v2-case-m" style="background:#caff00">×3</span>
+            <span class="v2-case-l">inscripciones</span>
+            <a class="v2-case-link" href="https://hillel-andorra.vercel.app/" target="_blank" rel="noopener">Ver proyecto →</a>
+          </div>
+        </article>
+        <article class="v2-case">
+          <div class="v2-case-meta"><span class="v2-case-cli">Valkiria Tattoo</span><span class="v2-case-sec">Estudio · Andorra</span></div>
+          <h3 class="v2-case-title">Web inmersiva con galería y reservas que llenó la agenda 2 meses por adelantado</h3>
+          <div class="v2-case-bottom">
+            <span class="v2-case-m" style="background:#ff2bd6">+120%</span>
+            <span class="v2-case-l">reservas online</span>
+            <a class="v2-case-link" href="https://valkiria-tattoo.vercel.app/" target="_blank" rel="noopener">Ver proyecto →</a>
+          </div>
+        </article>
+        <article class="v2-case">
+          <div class="v2-case-meta"><span class="v2-case-cli">Lasar Arquitectura</span><span class="v2-case-sec">Arquitectura · Andorra</span></div>
+          <h3 class="v2-case-title">Portfolio profesional que convierte visitas en solicitudes de presupuesto</h3>
+          <div class="v2-case-bottom">
+            <span class="v2-case-m" style="background:#2b6cff">×2.5</span>
+            <span class="v2-case-l">leads/mes</span>
+            <a class="v2-case-link" href="https://lasararquitectura.vercel.app/" target="_blank" rel="noopener">Ver proyecto →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ════════════ PRECIOS ════════════ -->
+    <section class="v2-section" id="prc">
+      <div class="v2-section-head">
+        <div class="v2-eyebrow" style="color:#2b6cff">— Capítulo 03</div>
+        <h2 class="v2-section-title">Precios.<br>Públicos.<br><em>Cerrados.</em></h2>
+      </div>
+      <div class="v2-plans">
+        <!-- Plan 1 -->
+        <div class="v2-plan" style="background:#fff;color:#0a0a0a">
+          <div class="v2-plan-num">01</div>
+          <h3 class="v2-plan-name">Arranque</h3>
+          <div class="v2-plan-target">Empresas que empiezan online</div>
+          <div class="v2-plan-price">€1.500</div>
+          <div class="v2-plan-extra">precio cerrado</div>
+          <ul>
+            <li>— Web 5-7 secciones</li>
+            <li>— SEO base + analytics</li>
+            <li>— Responsive 100%</li>
+            <li>— Hosting incluido</li>
+            <li>— Soporte por email</li>
+          </ul>
+          <a href="#cnt" class="v2-plan-cta" style="background:#0a0a0a;color:#fff;border-color:#0a0a0a">Elegir Arranque →</a>
+        </div>
+        <!-- Plan 2 (featured) -->
+        <div class="v2-plan v2-plan-on" style="background:#caff00;color:#0a0a0a">
+          <div class="v2-plan-tag">★ Más elegido</div>
+          <div class="v2-plan-num">02</div>
+          <h3 class="v2-plan-name">Sistema</h3>
+          <div class="v2-plan-target">Empresas que quieren escalar</div>
+          <div class="v2-plan-price">€3.500</div>
+          <div class="v2-plan-extra">precio cerrado</div>
+          <ul>
+            <li>— Web completa + blog</li>
+            <li>— Automatizaciones CRM</li>
+            <li>— Formularios inteligentes</li>
+            <li>— Integración WhatsApp</li>
+            <li>— Soporte prioritario</li>
+            <li>— Optimización mensual</li>
+          </ul>
+          <a href="#cnt" class="v2-plan-cta" style="background:#0a0a0a;color:#caff00;border-color:#0a0a0a">Elegir Sistema →</a>
+        </div>
+        <!-- Plan 3 -->
+        <div class="v2-plan" style="background:#0a0a0a;color:#fff">
+          <div class="v2-plan-num">03</div>
+          <h3 class="v2-plan-name">A medida</h3>
+          <div class="v2-plan-target">Proyectos complejos</div>
+          <div class="v2-plan-price">€6.000+</div>
+          <div class="v2-plan-extra">precio cerrado</div>
+          <ul>
+            <li>— Plataforma personalizada</li>
+            <li>— Integraciones a medida</li>
+            <li>— Dashboard de datos</li>
+            <li>— Automatización completa</li>
+            <li>— Equipo dedicado</li>
+            <li>— SLA garantizado</li>
+          </ul>
+          <a href="#cnt" class="v2-plan-cta" style="background:#fff;color:#0a0a0a;border-color:#fff">Elegir A medida →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ CONTACTO ════════════ -->
+    <section class="v2-section v2-contact" id="cnt">
+      <div class="v2-eyebrow">— Capítulo 04 — Final</div>
+      <h2 class="v2-contact-title">Deja de leer.<br><em>Empieza a</em><br>facturar.</h2>
+      <div class="v2-contact-grid">
+        <div class="v2-contact-info">
+          <p>Cuéntanos qué necesitas. Respondemos en menos de 24 horas con propuesta concreta y precio cerrado. Sin "vamos a explorar sinergias".</p>
+          <div class="v2-contact-meta">
+            <div><strong>Email</strong> kninfodigital@gmail.com</div>
+            <div><strong>Tel.</strong> +376 655 708</div>
+            <div><strong>HQ</strong> Escaldes-Engordany, Andorra</div>
+            <div><strong>IG</strong> @alejandrompc_</div>
+          </div>
+        </div>
+        <form class="v2-contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+          <input type="hidden" name="subject" value="Nuevo contacto desde knowin.es">
+          <label><span>Nombre</span><input name="name" required placeholder="Cómo te llamas" autocomplete="name"></label>
+          <label><span>Empresa</span><input name="company" placeholder="Tu negocio"></label>
+          <label><span>Email</span><input type="email" name="email" required placeholder="tu@email.com" autocomplete="email"></label>
+          <label><span>Presupuesto</span>
+            <select name="budget"><option value="" disabled selected>Selecciona...</option><option>&lt; 2.000€</option><option>2.000 - 5.000€</option><option>5.000 - 10.000€</option><option>&gt; 10.000€</option></select>
+          </label>
+          <label class="v2-cf-full"><span>Cuéntanos</span><textarea name="message" required rows="4" placeholder="Qué necesitas, qué tienes, qué problema resolver..."></textarea></label>
+          <button type="submit" class="v2-cf-send">Enviar mensaje →</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="v2-footer">
+    <div class="v2-footer-mega">knowin<span>.</span></div>
+    <div class="v2-footer-cols">
+      <div><h4>Servicios</h4><a href="#srv">Webs</a><a href="#srv">Landing pages</a><a href="#srv">Automatizaciones</a><a href="#srv">Consultoría</a></div>
+      <div><h4>Empresa</h4><a href="#case">Casos</a><a href="#prc">Precios</a><a href="#cnt">Contacto</a></div>
+      <div><h4>Legal</h4><a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Cookies</a></div>
+      <div><h4>Social</h4><a href="https://instagram.com/alejandrompc_" target="_blank" rel="noopener">Instagram ↗</a><a href="https://wa.me/376655708" target="_blank" rel="noopener">WhatsApp ↗</a><a href="mailto:kninfodigital@gmail.com">Email ↗</a></div>
+    </div>
+    <div class="v2-footer-bot">
+      <span>© 2026 Knowin · Escaldes-Engordany, Andorra</span>
+      <span>Construido con código real, sin humo.</span>
+    </div>
+  </footer>
+
+  <!-- ════════════ JS ════════════ -->
+  <script>
+    // Rotor rotation on scroll
+    const rotor = document.getElementById('rotor');
+    if (rotor) {
+      window.addEventListener('scroll', () => {
+        rotor.style.transform = 'rotate(' + (window.scrollY * 0.3) + 'deg)';
+      }, { passive: true });
+    }
+  </script>
+
+</body>
+</html>

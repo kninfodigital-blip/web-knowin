@@ -1,0 +1,86 @@
+<section class="v2-hero">
+  <div class="v2-hero-side">
+    <div class="v2-hero-issue">
+      <div>VOL.01</div>
+      <div>2026 — ANDORRA</div>
+      <div>AGENCIA·DIGITAL</div>
+    </div>
+    <div class="v2-hero-tagline">
+      UN MANIFIESTO<br/>EN FORMA DE<br/>AGENCIA.
+    </div>
+  </div>
+
+  <div class="v2-hero-main">
+    <div class="v2-eyebrow">
+      <span class="v2-dash"></span> SISTEMAS DIGITALES QUE ESCALAN
+    </div>
+    <h1 class="v2-hero-title">
+      <span class="v2-h-line">TU&nbsp;WEB</span>
+      <span class="v2-h-line">
+        <span class="v2-h-strike-text">EXISTE.</span>
+      </span>
+      <span class="v2-h-line v2-h-blue">PERO&nbsp;NO</span>
+      <span class="v2-h-line"><span class="v2-h-volt">VENDE.</span></span>
+      <span class="v2-h-line v2-h-arrow">
+        ARREGLEMOS&nbsp;ESO<span class="v2-arrow-anim">→</span>
+      </span>
+    </h1>
+
+    <div class="v2-hero-grid">
+      <p class="v2-hero-lede">
+        Knowin construye webs y automatizaciones para empresas que ya no aceptan
+        seguir invisibles. <em>Sin paquetes premium inflados. Sin "vamos a explorar".
+        Sin humo.</em> Solo sistemas que facturan.
+      </p>
+      <div class="v2-hero-actions">
+        <a href="#cnt" class="v2-cta v2-cta-black">
+          Reservar diagnóstico gratis
+          <span class="v2-cta-arr">↗</span>
+        </a>
+        <a href="#case" class="v2-cta v2-cta-ghost">
+          Ver casos reales
+        </a>
+      </div>
+    </div>
+
+    <div class="v2-hero-numbers">
+      <div class="v2-num">
+        <div class="v2-num-big">+15</div>
+        <div class="v2-num-cap">Proyectos entregados funcionando en producción.</div>
+      </div>
+      <div class="v2-num">
+        <div class="v2-num-big">14<span>d</span></div>
+        <div class="v2-num-cap">De brief a producción. Pregunta a nuestros clientes.</div>
+      </div>
+      <div class="v2-num">
+        <div class="v2-num-big">3<span>países</span></div>
+        <div class="v2-num-cap">Andorra, España y Francia. Remote-first.</div>
+      </div>
+    </div>
+
+    <!-- Rotor -->
+    <div class="v2-hero-rotor" id="rotor">
+      <svg viewBox="0 0 200 200">
+        <defs>
+          <path id="v2-circle-text" d="M 100,100 m -82,0 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0" />
+        </defs>
+        <text class="v2-rotor-text">
+          <textPath href="#v2-circle-text">
+            KNOWIN · WEB · SISTEMAS · KNOWIN · WEB · SISTEMAS ·
+          </textPath>
+        </text>
+        <circle cx="100" cy="100" r="32" fill="#0a0a0a" />
+        <text x="100" y="108" text-anchor="middle" fill="#caff00" font-size="22" font-weight="900">K</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<script>
+  const rotor = document.getElementById('rotor');
+  if (rotor) {
+    window.addEventListener('scroll', () => {
+      rotor.style.transform = `rotate(${window.scrollY * 0.3}deg)`;
+    }, { passive: true });
+  }
+</script>

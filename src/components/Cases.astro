@@ -1,0 +1,37 @@
+---
+const cases = [
+  { cli: 'Hillel Andorra', sec: 'Educación · Andorra', t: 'Plataforma educativa con reservas en tiempo real que multiplicó inscripciones',
+    m: '×3', l: 'inscripciones', col: '#caff00', url: 'https://hillel-andorra.vercel.app/' },
+  { cli: 'Valkiria Tattoo', sec: 'Estudio · Andorra', t: 'Web inmersiva con galería y reservas que llenó la agenda 2 meses por adelantado',
+    m: '+120%', l: 'reservas online', col: '#ff2bd6', url: 'https://valkiria-tattoo.vercel.app/' },
+  { cli: 'Lasar Arquitectura', sec: 'Arquitectura · Andorra', t: 'Portfolio profesional que convierte visitas en solicitudes de presupuesto',
+    m: '×2.5', l: 'leads/mes', col: '#2b6cff', url: 'https://lasararquitectura.vercel.app/' },
+];
+---
+
+<section class="v2-section" id="case">
+  <div class="v2-section-head">
+    <div class="v2-eyebrow">— Capítulo 02</div>
+    <h2 class="v2-section-title">
+      Casos.<br/>
+      Reales.<br/>
+      <em>Verificables.</em>
+    </h2>
+  </div>
+  <div class="v2-cases-list">
+    {cases.map((c, i) => (
+      <article class="v2-case">
+        <div class="v2-case-meta">
+          <span class="v2-case-cli">{c.cli}</span>
+          <span class="v2-case-sec">{c.sec}</span>
+        </div>
+        <h3 class="v2-case-title">{c.t}</h3>
+        <div class="v2-case-bottom">
+          <span class="v2-case-m" style={`background:${c.col}`}>{c.m}</span>
+          <span class="v2-case-l">{c.l}</span>
+          <a class="v2-case-link" href={c.url} target="_blank" rel="noopener">Ver proyecto →</a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

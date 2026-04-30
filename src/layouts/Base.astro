@@ -1,0 +1,31 @@
+---
+const title = 'Knowin — Webs y automatización con IA para empresas | Andorra';
+const description = 'Construimos webs y agentes de IA para empresas que quieren crecer. Precio cerrado, 14 días a producción, cero humo.';
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href="https://knowin.es/" />
+  <link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org", "@type": "ProfessionalService",
+    "name": "Knowin", "url": "https://knowin.es",
+    "email": "kninfodigital@gmail.com", "telephone": "+376655708",
+    "address": { "@type": "PostalAddress", "addressLocality": "Escaldes-Engordany", "addressCountry": "AD" },
+    "areaServed": ["AD", "ES", "FR"]
+  })} />
+</head>
+<body>
+  <slot />
+</body>
+</html>
