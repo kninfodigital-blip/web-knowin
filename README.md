@@ -1,43 +1,44 @@
-# Astro Starter Kit: Minimal
+# Knowin
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Webs y automatización con IA para empresas | Andorra
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commands
 
-## 🚀 Project Structure
+| Command           | Action                                      |
+| :---------------- | :------------------------------------------ |
+| `npm install`     | Installs dependencies                       |
+| `npm run dev`     | Starts local dev server at `localhost:4321`  |
+| `npm run build`   | Build your production site to `./dist/`     |
+| `npm run preview` | Preview your build locally, before deploying|
 
-Inside of your Astro project, you'll see the following folders and files:
+## Meta Pixel + Conversions API (CAPI)
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### Variables de entorno
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+| Variable               | Scope       | Descripcion                                     |
+| :--------------------- | :---------- | :----------------------------------------------- |
+| `PUBLIC_FB_PIXEL_ID`   | Client      | ID del Pixel de Meta (expuesta al navegador)     |
+| `META_PIXEL_ID`        | Server      | Mismo ID, usado en el endpoint CAPI              |
+| `META_CAPI_TOKEN`      | Server      | Token de acceso de la API de Conversiones        |
+| `META_TEST_EVENT_CODE` | Server (opt)| Codigo de Test Events para validar en Events Manager |
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Las variables ya estan configuradas en Vercel (Production + Preview). Para desarrollo local, crea un archivo `.env` basandote en `.env.example`.
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Arquitectura
 
-## 🧞 Commands
+1. **Pixel (cliente)** — `src/components/MetaPixel.astro` inyecta el snippet oficial en el `<head>`. Lee `PUBLIC_FB_PIXEL_ID`.
+2. **CAPI (servidor)** — `src/pages/api/meta-capi.ts` recibe eventos via POST y los envia a la Graph API con IP, user-agent y PII hasheado (SHA-256).
+3. **Helper de tracking** — `src/lib/track.ts` genera un `event_id` unico, dispara `fbq()` en el cliente y llama al endpoint CAPI en paralelo. El `event_id` compartido permite a Meta deduplicar.
+4. **Formulario de contacto** — Al enviar con exito, se dispara un evento `Lead` con deduplicacion automatica.
 
-All commands are run from the root of the project, from a terminal:
+### Testear con Test Events
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. En [Events Manager](https://business.facebook.com/events_manager), ve a **Test Events**.
+2. Copia el codigo de test (ej. `TEST12345`).
+3. En Vercel, anade la variable `META_TEST_EVENT_CODE` con ese valor en el entorno Preview.
+4. Visita la preview URL y envia el formulario.
+5. Los eventos apareceran en la pestana **Test Events** en tiempo real.
 
-## 👀 Want to learn more?
+### Desactivar el codigo de prueba
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Simplemente elimina la variable `META_TEST_EVENT_CODE` de Vercel (o dejala vacia). No es necesario modificar codigo.

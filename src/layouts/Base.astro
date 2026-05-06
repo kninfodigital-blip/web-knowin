@@ -1,4 +1,6 @@
 ---
+import MetaPixel from '../components/MetaPixel.astro';
+
 const title = 'Knowin — Webs y automatización con IA para empresas | Andorra';
 const description = 'Construimos webs y agentes de IA para empresas que quieren crecer. Precio cerrado, 14 días a producción, cero humo.';
 ---
@@ -17,6 +19,7 @@ const description = 'Construimos webs y agentes de IA para empresas que quieren 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <MetaPixel />
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org", "@type": "ProfessionalService",
     "name": "Knowin", "url": "https://knowin.es",
