@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Knowin — Webs y automatización con IA para empresas | Andorra</title>
   <meta name="description" content="Construimos webs y agentes de IA para empresas que quieren crecer. Precio cerrado, 14 días a producción, cero humo.">
-  <link rel="canonical" href="https://knowin.es/">
+  <link rel="canonical" href="https://apknowin.com/">
   <meta property="og:title" content="Knowin — Webs y automatización con IA para empresas | Andorra">
   <meta property="og:description" content="Construimos webs y agentes de IA para empresas que quieren crecer. Precio cerrado, 14 días a producción, cero humo.">
   <meta property="og:type" content="website">
@@ -534,6 +534,30 @@
           body: JSON.stringify({ nombre, email, empresa, presupuesto, mensaje }),
         });
         if (!res.ok) throw new Error('Error del servidor');
+
+        // Meta Pixel — Lead event con deduplicación
+        const eventId = crypto.randomUUID();
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', {
+            content_name: presupuesto || 'Sin presupuesto',
+          }, { eventID: eventId });
+        }
+
+        // Meta CAPI — server-side Lead con mismo eventId
+        const fbp = document.cookie.match(/_fbp=([^;]+)/)?.[1] || '';
+        const fbc = document.cookie.match(/_fbc=([^;]+)/)?.[1] || '';
+        fetch('/api/meta-capi', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            event_name: 'Lead',
+            event_id: eventId,
+            event_source_url: window.location.href,
+            user_data: { email, fbp, fbc },
+            custom_data: { content_name: presupuesto || 'Sin presupuesto' },
+          }),
+        }).catch(() => {});
+
         form.querySelectorAll('input,select,textarea,button').forEach(el => el.style.display = 'none');
         form.querySelectorAll('label,span').forEach(el => el.style.display = 'none');
         document.getElementById('cf-success').style.display = 'block';
