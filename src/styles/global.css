@@ -157,6 +157,82 @@ a { color: inherit; text-decoration: none; }
 .v2-footer-cols a:hover { color: var(--volt); }
 .v2-footer-bot { display: flex; justify-content: space-between; border-top: 1px solid #333; padding-top: 24px; font-family: var(--font-mono); font-size: 12px; color: #777; }
 
+/* ── LEGAL ── */
+.v2-legal {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 80px 56px 120px;
+}
+.v2-legal h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 56px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.v2-legal-date {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.v2-legal-lang {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 48px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.v2-legal-lang a {
+  padding: 6px 14px;
+  border: 2px solid var(--fg);
+  font-weight: 700;
+  transition: all 0.15s;
+}
+.v2-legal-lang a:hover {
+  background: var(--fg);
+  color: var(--bg);
+}
+.v2-legal h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(20px, 2.5vw, 28px);
+  letter-spacing: -0.02em;
+  margin: 48px 0 16px;
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+}
+.v2-legal h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  margin: 24px 0 8px;
+}
+.v2-legal p,
+.v2-legal li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--fg);
+}
+.v2-legal p { margin-bottom: 12px; }
+.v2-legal ul {
+  list-style: disc;
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+.v2-legal ul li { margin-bottom: 6px; }
+.v2-legal a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.v2-legal hr.v2-legal-divider {
+  border: none;
+  border-top: 3px solid var(--fg);
+  margin: 64px 0;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .v2-hero { grid-template-columns: 1fr; }
@@ -174,6 +250,7 @@ a { color: inherit; text-decoration: none; }
   .v2-srv-arrow { font-size: 32px; }
   .v2-contact-form { grid-template-columns: 1fr; }
   .v2-footer-cols { grid-template-columns: repeat(2, 1fr); }
+  .v2-legal { padding: 48px 24px 80px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

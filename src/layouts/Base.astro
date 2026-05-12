@@ -1,8 +1,17 @@
 ---
 import MetaPixel from '../components/MetaPixel.astro';
 
-const title = 'Knowin — Webs y automatización con IA para empresas | Andorra';
-const description = 'Construimos webs y agentes de IA para empresas que quieren crecer. Precio cerrado, 14 días a producción, cero humo.';
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const {
+  title = 'Knowin — Webs y automatización con IA para empresas | Andorra',
+  description = 'Construimos webs y agentes de IA para empresas que quieren crecer. Precio cerrado, 14 días a producción, cero humo.',
+  canonical = 'https://apknowin.com/',
+} = Astro.props;
 ---
 <!doctype html>
 <html lang="es">
@@ -11,7 +20,7 @@ const description = 'Construimos webs y agentes de IA para empresas que quieren 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="canonical" href="https://knowin.es/" />
+  <link rel="canonical" href={canonical} />
   <link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
   <meta property="og:title" content={title} />
